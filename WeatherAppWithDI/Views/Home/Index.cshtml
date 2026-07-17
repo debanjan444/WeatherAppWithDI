@@ -1,0 +1,11 @@
+﻿
+@model List<CityWeather>;
+<h2>Currently in the index view</h2>
+@foreach (var item in Model)
+{
+	<h2>@item.CityName</h2>
+	<h3>@item.DateAndTime</h3>
+	<h3>@item.TemperatureFahrenheit</h3>
+	<a href="~/weather/@item.CityUniqueCode">Details</a>
+	<hr />
+}
