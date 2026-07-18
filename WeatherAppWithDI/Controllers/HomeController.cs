@@ -9,12 +9,13 @@ namespace WeatherAppWithDI.Controllers
     public class HomeController : Controller
     {
         private readonly IWeatherService _sevice;
-        public HomeController(IWeatherService service) {
+        public HomeController(IWeatherService service)
+        {
             _sevice = service;
         }
 
         [Route("/")]
-        public IActionResult Index()
+        public IActionResult Index(/*[FromServices]IWeatherService service*/)
         {
             return View(_sevice.GetCityWeathers());
         }
@@ -24,7 +25,7 @@ namespace WeatherAppWithDI.Controllers
         public IActionResult Details(string cityCode)
         {
             bool flag = string.IsNullOrEmpty(cityCode);
-            if(flag == true)
+            if (flag == true)
             {
                 return BadRequest("the city code can not be empty");
             }

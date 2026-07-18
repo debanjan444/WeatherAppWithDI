@@ -1,4 +1,6 @@
-﻿@model CityWeather;
+﻿@using ServiceConracts
+@model CityWeather;
+@inject IWeatherService service;
 <h1>
 	@Model.CityName
 </h1>
@@ -7,5 +9,8 @@
 </h2>
 <h3>
 	@Model.TemperatureFahrenheit
+</h3>
+<h3>
+	@service.SayHello();
 </h3>
 <a href="~/">Go back</a>

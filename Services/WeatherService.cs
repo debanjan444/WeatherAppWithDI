@@ -37,6 +37,11 @@ namespace Services
 
 
         }
-        
+        public string SayHello()
+        {
+            return "hello from the serveice method";
+        }
+
+
     }
 }

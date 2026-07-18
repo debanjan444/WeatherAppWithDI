@@ -5,5 +5,8 @@ namespace ServiceConracts
     {
         List<CityWeather> GetCityWeathers();
         CityWeather? GetCityWeather(string cityCode);
+
+
+        string SayHello();
     }
 }
